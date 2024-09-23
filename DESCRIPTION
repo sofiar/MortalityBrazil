@@ -1,0 +1,20 @@
+Package: MortalityBrazil
+Type: Package
+Title: Continuous risk maps of Brazilian mortality data
+Version: 0.1.0
+Author: Sofia Ruiz Suarez
+Description: Construction of continuous risk maps of Brazilian mortality data. We fit a dissagregation model under the ELGM approach (Stringer. et al 2022)
+Encoding: UTF-8
+LazyData: true
+Imports:
+ tidyverse,
+  ggplot2,
+  terra,
+  mapmisc,
+  sp,
+  raster,
+  aghq,
+  tidyr,
+  dplyr,
+  RColorBrewer
+RoxygenNote: 7.2.3

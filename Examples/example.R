@@ -4,8 +4,7 @@
 # intent (Y10-Y34) of women  between 10 and 49 years old
 # Period: 2007-2010
 
-devtools::load_all("./")
-devtools::document()
+library(MortalityBrazil)
 
 ############################## 1. Load data ####################################
 

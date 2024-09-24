@@ -4,7 +4,28 @@
 ### This code uses source code of the disaggregation package:                     ###
 ### https://cran.r-project.org/web/packages/disaggregation/index.html             ###
 #####################################################################################
+#' Fit a dissagregation model based on the Extended Latent Gaussian Process
+#' approach of Stringer and others 2021
+#'
+#' This function fit a dissagregation
+#' @param mortality_sf a ` "sf"  "data.frame"` object with mortality counts.
+#' @param offset_sr a `SpatRaster` with the population offset
+#' @param id_var a `character` with the name of polygon variable
+#' @param response_var a `character` with name of response variable
+#' @param priors a `list` with priors
+#' @param covariate_raster a `SpatRaster` with covariates
+#' @param k `integer`, the number of quadrature points to use.  Default k=5.
+#' k= 1 corresponds to a Laplace approximation.
+#' @param startingvalue Value to start the optimization
 
+#' @examples
+#'result = fit_dmodel(mortality_data, population_offset, id_var='code_muni',
+#'                    response_var='nCounts', priors,
+#'                    covariate_rasters = covariate_raster,
+#'                    startingvalue=c(0,0,20),
+#'                    k=7)
+#'summary(result$aghqmodel)
+#' @export
 fit_dmodel = function(mortality_sf,offset_sr,id_var,response_var,priors,
                     covariate_rasters = NULL, k=5,startingvalue=rep(0,3)){
 
@@ -112,7 +133,7 @@ fit_dmodel = function(mortality_sf,offset_sr,id_var,response_var,priors,
     ndim = dim(data$covariate_data)[2]
     cov_matrix = as.matrix(data$covariate_data[, -c((ndim-1):ndim)])
 
-    if (ncol(cov_matrix) == 1) {  cov_matrix <- as.matrix(base::apply(cov_matrix, 1, as.numeric))
+    if (ncol(cov_matrix) == 1) {cov_matrix <- as.matrix(base::apply(cov_matrix, 1, as.numeric))
     }else {cov_matrix = t(base::apply(cov_matrix, 1, as.numeric))}
 
     parameters = list(intercept = -5,

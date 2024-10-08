@@ -7,7 +7,7 @@
 #' Fit a dissagregation model based on the Extended Latent Gaussian Process
 #' approach of Stringer and others 2021
 #'
-#' This function fit a dissagregation
+#' This function fit a dissagregation model
 #' @param mortality_sf a ` "sf"  "data.frame"` object with mortality counts.
 #' @param offset_sr a `SpatRaster` with the population offset
 #' @param id_var a `character` with the name of polygon variable
@@ -20,7 +20,7 @@
 #' @references Stringer, A., Brown, P., & Stafford, J. (2022). Fast, Scalable
 #' Approximations to Posterior Distributions in Extended Latent Gaussian Models.
 #' Journal of Computational and Graphical Statistics, 32(1), 84–98.
-#' [ https://doi.org/10.1080/10618600.2022.2099403]
+#' https://doi.org/10.1080/10618600.2022.2099403
 #' @examples
 #'result = fit_dmodel(mortality_data, population_offset, id_var='code_muni',
 #'                    response_var='nCounts', priors,

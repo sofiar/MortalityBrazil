@@ -37,5 +37,13 @@ data(mortality_data)
 
 ### **Features**
 - **Demographic Loading**: Easily load various demographic spatial covarites of Brazil based on the census 2010.
-- **Dissagregation Analysis**: Functions for conduction disaggregation analysis using ELGM.
-- **Visualization**: Create plots and maps using `ggplot2` and `mapmisc` -based functions
+- **Dissagregation Analysis**: Functions for conducting disaggregation analysis using ELGM.
+- **Visualization**: Create plots and maps using `ggplot2` and `mapmisc` - based functions
+
+
+
+### **References**
+Stringer, A., Brown, P., & Stafford, J. (2022). Fast, Scalable
+Approximations to Posterior Distributions in Extended Latent Gaussian Models.
+Journal of Computational and Graphical Statistics, 32(1), 84–98. https://doi.org/10.1080/10618600.2022.2099403
+

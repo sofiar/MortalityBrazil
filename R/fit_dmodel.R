@@ -96,8 +96,8 @@ fit_dmodel = function(mortality_sf,offset_sr,id_var,response_var,priors,
     aghqmodel = aghq::marginal_laplace_tmb(obj,k=k,startingvalue = startingvalue,
                                            control = aghq::default_control_tmb())
 
-    # data[[11]] = 0
-    # names(data)[11]='Ncov'
+    data[[11]] = 0
+    names(data)[11]='Ncov'
 
   } else {  # Fit model with covariates
     data = disaggregation::prepare_data(

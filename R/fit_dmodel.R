@@ -17,7 +17,10 @@
 #' @param k `integer`, the number of quadrature points to use.  Default k=5.
 #' k= 1 corresponds to a Laplace approximation.
 #' @param startingvalue Value to start the optimization
-
+#' @references Stringer, A., Brown, P., & Stafford, J. (2022). Fast, Scalable
+#' Approximations to Posterior Distributions in Extended Latent Gaussian Models.
+#' Journal of Computational and Graphical Statistics, 32(1), 84–98.
+#' [ https://doi.org/10.1080/10618600.2022.2099403]
 #' @examples
 #'result = fit_dmodel(mortality_data, population_offset, id_var='code_muni',
 #'                    response_var='nCounts', priors,
